@@ -2,11 +2,11 @@
 A regular expression fuzzer, used for blacklist bypasses.
 
 ##Description
-rebuster is a tool designed to brute-force bypasses for blacklists the rely on regular expressions to detect and/or remove offending input. It does this by taking the regular expression, a list of samples that are known to fail the blacklist, and a  validation command usedto verify the possible output is valid, in addition to several other inputs. rebuster first checks all samples to ensure they meet all requirements, and that the regex and validation command are working as intended. Once everything is verified, rebuster will randomly choose a sample, mutate it randomly by changing some characters in the string, then pass it to the regular expression for evaluation. If the test case fails to bypass the regex, it is thrown away, and the process starts over. If the test case passes the regex, then it is handed to the validation command for sanity checking. If the test case fails parsing here, it is thrown away. If it passes all checks, it is marked as a success, shown to the user, and rebuster exits. rebuster includes a simple example for testing.
+rebuster is a tool designed to brute-force bypasses for blacklists that rely on regular expressions to detect and/or remove offending input. It does this by taking the regular expression, a list of samples that are known to fail the blacklist, and a  validation command used to verify the possible output is valid, in addition to several other inputs. rebuster first checks all samples to ensure they meet all requirements, and that the regex and validation command are working as intended. Once everything is verified, rebuster will randomly choose a sample, mutate it by changing some characters in the string, then pass it to the regular expression for evaluation. If the test case fails to bypass the regex, it is thrown away, and the process starts over. If the test case passes the regex, then it is handed to the validation command for sanity checking. If the test case fails parsing here, it is thrown away. If it passes all checks, it is marked as a success, shown to the user, and rebuster exits. rebuster includes a simple example for testing.
 
 rebuster has been developed and tested in Kali Linux, and requires no external libraries or packages.
 
-For any feature requests, bugs, or discussion, please open an issue at https://github.com/TheTwitchy/rebuster
+For any feature requests, bugs, or discussion, please open an issue at https://github.com/TheTwitchy/rebuster.
 
 ###Inputs
 | Name            | Description                                                               |
@@ -33,7 +33,7 @@ root@kali:~# rebuster.py -r "^mul [\d]*" -i example/samples.txt -c "example/math
 | | |  __/ |_) | |_| \__ \ ||  __/ |   
 |_|  \___|_.__/ \__,_|___/\__\___|_|   
                                        
-                          version 0.1
+                          version 0.2
 
 rebuster: info: Successfully loaded 3 samples.
 rebuster: info: Tested 10000 samples.
